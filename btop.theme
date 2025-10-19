@@ -1,0 +1,81 @@
+# Theme: poimandres
+# By: https://github.com/drcmda/poimandres-theme
+
+# Main bg
+theme[main_bg]="#1b1e28"
+
+# Main text color
+theme[main_fg]="#a6accd"
+
+# Title color for boxes
+theme[title]="#a6accd"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#7dcfff"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#2a2e3f"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#f8f8f2"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#6c6f93"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#7dcfff"
+
+# Cpu box outline color
+theme[cpu_box]="#6c6f93"
+
+# Memory/disks box outline color
+theme[mem_box]="#6c6f93"
+
+# Net up/down box outline color
+theme[net_box]="#6c6f93"
+
+# Processes box outline color
+theme[proc_box]="#6c6f93"
+
+# Box divider line and small boxes line color
+theme[div_line]="#6c6f93"
+
+# Temperature graph colors
+theme[temp_start]="#5de4c7"
+theme[temp_mid]="#fffac2"
+theme[temp_end]="#d0679d"
+
+# CPU graph colors
+theme[cpu_start]="#5de4c7"
+theme[cpu_mid]="#fffac2"
+theme[cpu_end]="#d0679d"
+
+# Mem/Disk free meter
+theme[free_start]="#5de4c7"
+theme[free_mid]="#fffac2"
+theme[free_end]="#d0679d"
+
+# Mem/Disk cached meter
+theme[cached_start]="#5de4c7"
+theme[cached_mid]="#fffac2"
+theme[cached_end]="#d0679d"
+
+# Mem/Disk available meter
+theme[available_start]="#5de4c7"
+theme[available_mid]="#fffac2"
+theme[available_end]="#d0679d"
+
+# Mem/Disk used meter
+theme[used_start]="#5de4c7"
+theme[used_mid]="#fffac2"
+theme[used_end]="#d0679d"
+
+# Download graph colors
+theme[download_start]="#5de4c7"
+theme[download_mid]="#fffac2"
+theme[download_end]="#d0679d"
+
+# Upload graph colors
+theme[upload_start]="#5de4c7"
+theme[upload_mid]="#fffac2"
+theme[upload_end]="#d0679d"
