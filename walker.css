@@ -1,6 +1,68 @@
+@define-color foreground #a6accd;
+@define-color background #1b1e28;
+
 @define-color selected-text #5de4c7;
+@define-color selected-background #2a2e3f;
+@define-color error-text #d0679d;
+
 @define-color text #a6accd;
 @define-color base #1b1e28;
 @define-color border #add7fff2;
-@define-color foreground #a6accd;
-@define-color background #1b1e28;
+
+@define-color cursor #e4f0fb;
+
+/**
+ * Main Window Wrapper
+ */
+.box-wrapper {
+  margin: 0;
+  padding: 0;
+  background: @background;
+  border-radius: 8px;
+}
+
+/**
+* Search Input
+*/
+.search-container {
+  margin: -4px -6px -2px;
+}
+
+.input {
+  min-height: 0;
+  padding: 8px 18px;
+  color: @foreground;
+  background: lighter(@background);
+  border-radius: 6px;
+  caret-color: @cursor;
+}
+
+/**
+ * Scrollbar
+ */
+scrollbar {
+  display: none;
+}
+
+/**
+ * ItemBox
+ */
+.item-box {
+  min-height: 0;
+  padding: 0;
+  margin: 4px;
+  border-radius: 6px;
+}
+
+.item-box:hover,
+child:hover .item-box,
+child:selected .item-box {
+  background: @selected-background;
+}
+
+/**
+ * Error
+ */
+.error {
+  color: @error-text;
+}

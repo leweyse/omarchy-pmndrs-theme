@@ -1,6 +1,38 @@
 @define-color background-color #1b1e28;
 @define-color border-color #add7fff2;
-@define-color label #5de4c7;
-@define-color image #5de4c7;
-@define-color progress #5de4c7;
 
+@define-color image #fff;
+@define-color label #fff;
+
+@define-color progress #5de4c7;
+@define-color trough #2a2e3f;
+
+window#osd {
+  padding: 0px;
+  background: @background-color;
+  border-radius: 8px;
+}
+
+#container {
+	margin: 0px;
+  padding: 12px 18px 12px 16px;
+}
+
+image {
+  transform: scale(0.75);
+}
+
+image:disabled,
+progressbar:disabled {
+  opacity: 0.5;
+}
+
+progressbar {
+  min-height: 6px;
+  border-radius: 20px;
+}
+
+trough {
+  border-radius: 20px;
+  background: @trough;
+}
