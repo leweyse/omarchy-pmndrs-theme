@@ -158,12 +158,8 @@ body {
 }
 
 /* the left-bottom corner of the messages panel is broken when the panel is rounded */
-@container body style(--panel-labels: on) {
-  .visual-refresh {
-    .messagesWrapper__36d07 {
-      overflow: hidden;
-    }
-  }
+.chatGradientBase__36d07 {
+  background: transparent !important;
 }
 
 /* personal preference to reduce the bottom spacer of the messages panel */
