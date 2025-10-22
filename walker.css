@@ -26,6 +26,7 @@
 */
 .search-container {
   margin: -4px -6px -2px;
+  border-radius: 6px;
 }
 
 .input {
