@@ -12,8 +12,8 @@
 @define-color cursor #e4f0fb;
 
 /**
- * Main Window Wrapper
- */
+* Main Window Wrapper
+*/
 .box-wrapper {
   margin: 0;
   padding: 0;
@@ -38,15 +38,15 @@
 }
 
 /**
- * Scrollbar
- */
+* Scrollbar
+*/
 scrollbar {
   display: none;
 }
 
 /**
- * ItemBox
- */
+* ItemBox
+*/
 .item-box {
   min-height: 0;
   padding: 0;
@@ -61,8 +61,8 @@ child:selected .item-box {
 }
 
 /**
- * Error
- */
+* Error
+*/
 .error {
   color: @error-text;
 }
