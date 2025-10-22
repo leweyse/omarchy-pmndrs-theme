@@ -1,0 +1,176 @@
+/**
+* @name system24-pmndrs
+* @description a tui-style Poimandres based discord theme.
+* @author refact0r, poimandres, leweyse
+* @version 1.0.0
+* @invite nz87hXyvcy
+* @website https://github.com/refact0r/system24
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+  --font: 'Geist Mono'; /* change to '' for default discord font */
+  --code-font: 'Geist Mono'; /* change to '' for default discord font */
+  font-weight: 400; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+  letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+  /* sizes */
+  --gap: 16px; /* spacing between panels */
+  --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+  --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+  --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+  /* animation/transition options */
+  --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+  --list-item-transition: 0.2s ease; /* transition for list items */
+  --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+  /* top bar options */
+  --top-bar-height: 20px; /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+  --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+  --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+  --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+  /* window controls */
+  --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+  --window-control-size: 14px; /* size of custom window controls */
+
+  /* dms button options */
+  --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+  --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
+  --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+  --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+  --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+  --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+  --dms-background-image-url: url(''); /* url of the background image */
+  --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+  --dms-background-color: linear-gradient(70deg, var(--cyan-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+  /* background image options */
+  --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
+  --background-image-url: url(''); /* url of the background image */
+
+  /* transparency/blur options */
+  /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+  --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+  --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+  --panel-blur: off; /* off: no changes, on: blur the background of panels */
+  --blur-amount: 12px; /* amount of blur */
+  --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+  /* other options */
+  --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+  /* unrounding options */
+  --unrounding: off; /* off: default, on: remove rounded corners from panels */
+
+  /* styling options */
+  --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+  --ascii-titles: off; /* off: default, on: use ascii font for titles at the start of a channel */
+  --ascii-loader: off; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+
+  /* panel labels */
+  --panel-labels: on; /* off: default, on: add labels to panels */
+  --label-color: var(--text-muted); /* color of labels */
+  --label-hover-color: var(--green-1); /* color of labels when hovered */
+  --label-font-weight: 500; /* font weight of labels */
+}
+
+/* color options */
+:root {
+  --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+  /* text colors */
+  --text-0: var(--bg-4); /* text on colored elements */
+  --text-1: oklch(0.85 0 0); /* other normally white text */
+  --text-2: oklch(1 0 0); /* headings and important text */
+  --text-3: oklch(0.9 0 0); /* normal text */
+  --text-4: oklch(0.7 0 0); /* icon buttons and channels */
+  --text-5: oklch(0.7 0 0); /* muted channels/chats and timestamps */
+
+  /* background and dark colors */
+  --bg-1: oklch(0.3866 0.0198 271.79); /* dark buttons when clicked */
+  --bg-2: oklch(0.3366 0.0198 271.79); /* dark buttons */
+  --bg-3: oklch(0.2866 0.0198 271.79); /* spacing, secondary elements */
+  --bg-4: oklch(0.2366 0.0198 271.79); /* main background color */
+  --hover: oklch(0.3049 0.0313 274.14); /* channels and buttons when hovered */
+  --active: oklch(0.3049 0.0313 274.14); /* channels and buttons when clicked or selected */
+  --active-2: oklch(0.3049 0.0313 274.14); /* extra state for transparent buttons */
+  --message-hover: var(--hover); /* messages when hovered */
+
+  /* accent colors */
+  --accent-1: var(--cyan-1); /* links and other accent text */
+  --accent-2: var(--cyan-2); /* small accent elements */
+  --accent-3: var(--cyan-3); /* accent buttons */
+  --accent-4: var(--cyan-4); /* accent buttons when hovered */
+  --accent-5: var(--cyan-5); /* accent buttons when clicked */
+  --accent-new: var(--red-1); /* stuff that's normally red like mute/deafen buttons */
+  --mention: linear-gradient(to right, color-mix(in hsl, var(--green-1), transparent 90%) 40%, transparent); /* background of messages that mention you */
+  --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--green-1), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+  --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+  --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+  /* status indicator colors */
+  --online: var(--green-2); /* change to #40a258 for default */
+  --dnd: var(--red-2); /* change to #d83a41 for default */
+  --idle: var(--yellow-2); /* change to #cc954c for default */
+  --streaming: var(--purple-2); /* change to #9147ff for default */
+  --offline: var(--text-4); /* change to #82838b for default offline color */
+
+  /* border colors */
+  --border-light: var(--hover); /* general light border color */
+  --border: var(--active); /* general normal border color */
+  --border-hover: var(--green-1); /* border color of panels when hovered */
+  --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+  /* base colors */
+  --red-1: oklch(0.7535 0.1457 349.78);
+  --red-2: oklch(0.7035 0.1457 349.78);
+  --red-3: oklch(0.6535 0.1457 349.78);
+  --red-4: oklch(0.6035 0.1457 349.78);
+  --red-5: oklch(0.5535 0.1457 349.78);
+
+  --green-1: oklch(0.8366 0.1253 176.45);
+  --green-2: oklch(0.7866 0.1253 176.45);
+  --green-3: oklch(0.7366 0.1253 176.45);
+  --green-4: oklch(0.6866 0.1253 176.45);
+  --green-5: oklch(0.6366 0.1253 176.45);
+
+  --yellow-1: oklch(0.9755 0.0717 103.38);
+  --yellow-2: oklch(0.9255 0.0717 103.38);
+  --yellow-3: oklch(0.8755 0.0717 103.38);
+  --yellow-4: oklch(0.8255 0.0717 103.38);
+  --yellow-5: oklch(0.7755 0.0717 103.38);
+
+  --purple-1: oklch(0.8826 0.0776 339.51);
+  --purple-2: oklch(0.8326 0.0776 339.51);
+  --purple-3: oklch(0.7826 0.0776 339.51);
+  --purple-4: oklch(0.7326 0.0776 339.51);
+  --purple-5: oklch(0.6826 0.0776 339.51);
+
+  --cyan-1: oklch(0.8629 0.0713 247.4);
+  --cyan-2: oklch(0.8129 0.0713 247.4);
+  --cyan-3: oklch(0.7629 0.0713 247.4);
+  --cyan-4: oklch(0.7129 0.0713 247.4);
+  --cyan-5: oklch(0.6629 0.0713 247.4);
+}
+
+/* the left-bottom corner of the messages panel is broken when the panel is rounded */
+@container body style(--panel-labels: on) {
+  .visual-refresh {
+    .messagesWrapper__36d07 {
+      overflow: hidden;
+    }
+  }
+}
+
+/* personal preference to reduce the bottom spacer of the messages panel */
+@container body style(--custom-chatbar: separated) {
+  .visual-refresh {
+    .scrollerSpacer__36d07 {
+      height: 24px;
+    }
+  }
+}
