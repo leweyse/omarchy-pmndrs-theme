@@ -21,36 +21,18 @@ return {
           NormalFloat = { bg = p.background1, fg = p.text },
           FloatBorder = { bg = p.background1, fg = p.text },
 
-          ["Boolean"] = { fg = p.pink3 },
+          ["Function"] = { fg = "#bec7d1" },
+
+          ["@property"] = { fg = p.white },
           ["@constructor"] = { fg = "#D66ED2" },
           ["@keyword.coroutine"] = { fg = "#5de4c7" },
           ["@keyword.import"] = { link = "@keyword.coroutine" },
           ["@punctuation.bracket"] = { fg = p.yellow },
           ["@punctuation.special"] = { link = "@constructor" },
-          ["@lsp.type.function"] = { fg = p.text },
-          ["@lsp.type.function.lua"] = { fg = "#bec7d1" },
-          ["@lsp.type.property"] = { fg = p.white },
+          ["@function.builtin"] = { fg = "#bec7d1" },
+          ["@function.method.tsx"] = { fg = p.blue2 },
           ["@lsp.type.property.typescript"] = { fg = p.blue2 },
-          ["@lsp.type.function.typescriptreact"] = { fg = "#bec7d1" },
-
-          ["typescriptBlock"] = { fg = p.blue2 },
-          ["typescriptBraces"] = { fg = p.yellow },
-          ["typescriptParens"] = { fg = "#D66ED2" },
-          ["typescriptImport"] = { fg = p.teal1 },
-          ["typescriptImportBlock"] = { fg = p.blue2 },
-          ["typescriptStatementKeyword"] = { fg = p.teal2 },
-          ["typescriptFuncName"] = { fg = p.blue2 },
-          ["typescriptVariable"] = { fg = p.blue3 },
-          ["typescriptCall"] = { fg = "#D66ED2" },
-          ["typescriptTypeAnnotation"] = { fg = p.blue2 },
-          ["typescriptObjectLabel"] = { fg = p.blue2 },
-
-          ["tsxTagName"] = { fg = p.teal1 },
-          ["tsxIntrinsicTagName"] = { fg = p.teal1 },
-          ["tsxAttrib"] = { fg = p.blue3 },
-          ["tsxEqual"] = { fg = p.blue3 },
-
-          ["jsonBraces"] = { fg = "#D66ED2" },
+          ["@punctuation.bracket.json"] = { fg = "#D66ED2" },
         },
       })
     end,
@@ -61,7 +43,10 @@ return {
 
       local p = require('poimandres.palette')
 
+      local group = vim.api.nvim_create_augroup("OmarchyPoimandres", { clear = true })
+
       vim.api.nvim_create_autocmd("FileType", {
+        group = group,
         pattern = "*",
         callback = function()
           vim.api.nvim_set_hl(0, 'Quote', { fg = p.blueGray1 })
